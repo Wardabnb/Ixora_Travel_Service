@@ -27,7 +27,7 @@ const page = (props: Props) => {
 
   return (
     <div className="pt-5 text-black">
-      <h1 className="text-center font-extrabold  text-red-700 text-3xl">
+      <h1 className="text-center font-extrabold  text-[#004D40] text-3xl">
         Your Stays
       </h1>
 
@@ -46,7 +46,7 @@ const page = (props: Props) => {
                 alt="image"
                 className="w-full border-b   object-cover  bg-gray-300 h-[400px] "
               />
-              <h1 className="font-bold text-md text-red-600 text-center p-5 ">
+              <h1 className="font-bold text-md text-[#FF5722] text-center p-5 ">
                 {stay?.name}
               </h1>
               <p className="text-gray-400 pt-0">{stay?.location}</p>

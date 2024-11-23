@@ -92,7 +92,7 @@ export default function Page({}: Props) {
 
   return (
     <div className="text-black">
-      <div className="flex justify-center items-start py-10 min-h-screen ">
+      <div className="flex justify-center  py-10 pb-56">
         <div className="max-w-[1200px] w-full">
           <h1 className="text-6xl font-bold mb-10">Checkout</h1>
           <div className="flex gap-10 justify-between">
@@ -102,16 +102,19 @@ export default function Page({}: Props) {
                 <div key={stay._id}>
                   <div className="flex gap-5 items-center">
                     <Image
-                      src={stay.image}
-                      height="80"
-                      width="80"
-                      alt={stay.name}
+                      src={stay.image || "/placeholder.png"}
+                      height={100}
+                      width={100}
+                      alt={stay.name || "Stay"}
+                      className="w-[500px] h-[200px]"
                     />
-                    <div className="font-bold text-xl w-full">{stay.name}</div>
-                  </div>
-                  <div>
-                    <span className="font-bold">Price: </span>
-                    {stay.price}
+                    <div className="font-bold text-xl w-full text-red-700 flex flex-col gap-7">
+                      {stay.name}
+                      <div className="text-black">
+                        <span className="font-bold">Price: </span>
+                        {stay.price}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}

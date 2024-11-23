@@ -31,7 +31,7 @@ const Sidebar = (props: Props) => {
           name: "Add Stays",
           href: "/add_Stays",
         },
-        { name: "Stays List", href: "/Stays" },
+        { name: "Stays List", href: "/Stays?page=1" },
       ],
     },
     {
@@ -44,7 +44,7 @@ const Sidebar = (props: Props) => {
           name: "Add Flight",
           href: "/add_Flights",
         },
-        { name: "Flights List", href: "/Flights" },
+        { name: "Flights List", href: "/Flights?page=1" },
       ],
     },
     {
@@ -68,7 +68,7 @@ const Sidebar = (props: Props) => {
     },
   ];
   return (
-    <div className="flex flex-col w-[400px] items-center  top-0 pb-11 pt-20  gap-7 border-r h-screen bg-red-300 ">
+    <div className="flex flex-col w-[400px] items-center  top-0 pb-11 pt-20  gap-7 border-r h-screen bg-[#E8E8E8]">
       <Image
         src="/logo.jpg"
         height={100}
@@ -78,7 +78,7 @@ const Sidebar = (props: Props) => {
       />
       <div className="flex flex-col gap-2 w-[300px]">
         {sidebarElements.map((element) => (
-          <div className="flex flex-col items-center ">
+          <div className="flex flex-col items-center " key={element.name}>
             {!element.hasCollapasible ? (
               <Link
                 href={element.href}

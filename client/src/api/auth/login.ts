@@ -18,7 +18,7 @@ export function useLogin() {
     },
     onSuccess: (data) => {
       // Sauvegarder les données utilisateur dans localStorage après une connexion réussie
-      localStorage.setItem("user", JSON.stringify(data)); // Data représente l'utilisateur
+      localStorage.setItem("user", JSON.stringify(data.user)); // Data représente l'utilisateur
     },
     onError: (error) => {
       console.log("Login failed:", error);

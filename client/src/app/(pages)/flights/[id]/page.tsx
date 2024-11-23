@@ -38,7 +38,7 @@ const Page = (props: Props) => {
     redirect("/cartFlight?userId=" + userId);
   }
   return (
-    <div className="flex flex-col justify-center items-center pt-9 text-black">
+    <div className="flex flex-col justify-center items-center  text-black">
       {flight?.image ? (
         <Image
           src={flight.image}

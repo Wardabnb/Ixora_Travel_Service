@@ -24,10 +24,10 @@ import { useSearchParams } from "next/navigation";
 type Props = {};
 
 const Navbar = (props: Props) => {
-  const userId = JSON.parse(localStorage.getItem("user") || "[]");
+  const userId = JSON.parse(localStorage.getItem("user") || "[]").data.user;
 
   return (
-    <div className="flex items-center justify-between pt-5 px-10 border pb-5 bg-red-50 ">
+    <div className="flex items-center justify-between pt-5 px-10 border pb-5 bg-[#E8E8E8]">
       <Image
         src="/logo.jpg"
         height={60}

@@ -17,6 +17,8 @@ export function useChangeStaysStatus() {
         await axios.post("http://localhost:4000/reservationStay/status", {
           ReservationId,
           value,
+          password: "123456",
+          email: "admin@gmail.com",
         })
       ).data,
   });

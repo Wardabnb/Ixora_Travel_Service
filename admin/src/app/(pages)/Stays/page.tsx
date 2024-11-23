@@ -76,132 +76,132 @@ const page = (props: Props) => {
   };
   return (
     <div className="pt-5">
-      <h1 className="text-center font-extrabold  text-red-700 text-3xl">
-        Your Stays
-      </h1>
       <ScrollArea className="h-[700px] w-[77em] rounded-md border m-5">
-        <div className="grid  grid-cols-3  gap-4 p-10  ">
+        <div className="grid  grid-cols-3  gap-4 p-10 ">
           {stays?.map((stay: any, index: any) => (
             <div
-              className="flex flex-col  items-center border rounded-lg  group-hover:bg-slate-400"
+              className="group  relative flex flex-col justify-center  border rounded-lg "
               key={stay._id}
             >
-              <Image
-                src={stay.image}
-                height={100}
-                width={100}
-                alt="image"
-                className="w-full border-b   bg-gray-300"
-              />
-              <h1 className="font-bold text-lg text-red-600 text-center p-5">
-                {stay?.name}
-              </h1>
-              <p className="text-gray-400 ">{stay?.location}</p>
-              <p className="text-center p-5">{stay?.description}</p>
-              <div className="flex justify-center gap-11 items-center w-full">
-                <p>{stay?.price}DA</p>
-                <p>{stay?.ranting}/10</p>
-              </div>
-              <div className="">
-                <Dialog>
-                  <DialogTrigger className="absolute top-2 right-10 translate-x-1/2 hidden group-hover:block ">
-                    <Pencil />
-                  </DialogTrigger>
+              <div className="flex flex-col items-center w-full h-full  group-hover:bg-slate-400">
+                <Image
+                  src={stay.image}
+                  height={50}
+                  width={100}
+                  alt="Stay image"
+                  className="w-full border-b bg-gray-300 group-hover:bg-slate-400 h-[50%]"
+                />
 
-                  <DialogContent className="sm:max-w-[425px]">
-                    <DialogHeader>
-                      <DialogTitle>Edit Stay</DialogTitle>
-                      <DialogDescription>
-                        Make changes to your stay here. Click save when you're
-                        done.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="grid gap-4 py-4">
-                      <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="name" className="text-right">
-                          Name
-                        </Label>
-                        <Input
-                          id="name"
-                          defaultValue={stay.name}
-                          className="col-span-3"
-                          ref={NameRef}
-                        />
-                      </div>
-                      <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="locatisation" className="text-right">
-                          Location
-                        </Label>
-                        <Input
-                          id={stay.location}
-                          defaultValue="@peduarte"
-                          className="col-span-3"
-                          ref={LocationRef}
-                        />
-                      </div>
-                      <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="description" className="text-right">
-                          Description
-                        </Label>
-                        <Input
-                          id="description"
-                          defaultValue={stay.description}
-                          className="col-span-3"
-                          ref={DescriptionRef}
-                        />
-                      </div>
-                      <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="image" className="text-right">
-                          image
-                        </Label>
-                        <Input
-                          ref={ImageRef}
-                          id="image"
-                          className="col-span-3"
-                          type="file"
-                          accept="image/*"
-                          //@ts-ignore
-                          onChange={(e) => setFile(e.target.files?.[0])}
-                        />
-                      </div>
-                      <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="price" className="text-right">
-                          Price
-                        </Label>
-                        <Input
-                          id="price"
-                          defaultValue={stay.price}
-                          className="col-span-3"
-                          ref={PriceRef}
-                        />
-                      </div>
-                      <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="ranting" className="text-right">
-                          Ranting
-                        </Label>
-                        <Input
-                          id="ranting"
-                          defaultValue={stay.ranting}
-                          className="col-span-3"
-                          ref={RantingRef}
-                        />
-                      </div>
-                    </div>
-                    <DialogFooter>
-                      <Button type="submit" onClick={() => EditStay(stay)}>
-                        Save changes
-                      </Button>
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog>
+                <h1 className="font-bold text-lg text-red-600 text-center p-5">
+                  {stay?.name}
+                </h1>
+                <p className="text-gray-400 ">{stay?.location}</p>
+                <p className="text-center p-5">{stay?.description}</p>
+                <div className="flex justify-center gap-11 items-center w-full">
+                  <p>{stay?.price}DA</p>
+                  <p>{stay?.ranting}/10</p>
+                </div>
+                <div className="">
+                  <Dialog>
+                    <DialogTrigger className="absolute top-2 right-10 translate-x-1/2 hidden group-hover:block bg-white p-2 rounded">
+                      <Pencil />
+                    </DialogTrigger>
 
-                <Button
-                  variant="outline"
-                  className="absolute top-2 right-24 translate-x-1/2 hidden group-hover:block "
-                  onClick={() => handleDelete(stay)}
-                >
-                  <Trash2 />
-                </Button>
+                    <DialogContent className="sm:max-w-[425px]">
+                      <DialogHeader>
+                        <DialogTitle>Edit Stay</DialogTitle>
+                        <DialogDescription>
+                          Make changes to your stay here. Click save when you're
+                          done.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="grid gap-4 py-4">
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="name" className="text-right">
+                            Name
+                          </Label>
+                          <Input
+                            id="name"
+                            defaultValue={stay.name}
+                            className="col-span-3"
+                            ref={NameRef}
+                          />
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="locatisation" className="text-right">
+                            Location
+                          </Label>
+                          <Input
+                            id={stay.location}
+                            defaultValue="@peduarte"
+                            className="col-span-3"
+                            ref={LocationRef}
+                          />
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="description" className="text-right">
+                            Description
+                          </Label>
+                          <Input
+                            id="description"
+                            defaultValue={stay.description}
+                            className="col-span-3"
+                            ref={DescriptionRef}
+                          />
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="image" className="text-right">
+                            image
+                          </Label>
+                          <Input
+                            ref={ImageRef}
+                            id="image"
+                            className="col-span-3"
+                            type="file"
+                            accept="image/*"
+                            //@ts-ignore
+                            onChange={(e) => setFile(e.target.files?.[0])}
+                          />
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="price" className="text-right">
+                            Price
+                          </Label>
+                          <Input
+                            id="price"
+                            defaultValue={stay.price}
+                            className="col-span-3"
+                            ref={PriceRef}
+                          />
+                        </div>
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="ranting" className="text-right">
+                            Ranting
+                          </Label>
+                          <Input
+                            id="ranting"
+                            defaultValue={stay.ranting}
+                            className="col-span-3"
+                            ref={RantingRef}
+                          />
+                        </div>
+                      </div>
+                      <DialogFooter>
+                        <Button type="submit" onClick={() => EditStay(stay)}>
+                          Save changes
+                        </Button>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+
+                  <Button
+                    variant="outline"
+                    className="absolute top-2 right-24 translate-x-1/2 hidden group-hover:block "
+                    onClick={() => handleDelete(stay)}
+                  >
+                    <Trash2 />
+                  </Button>
+                </div>
               </div>
             </div>
           ))}

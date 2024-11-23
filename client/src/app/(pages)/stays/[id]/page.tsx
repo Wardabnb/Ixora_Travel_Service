@@ -38,7 +38,7 @@ const Page = (props: Props) => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center pt-9 text-black">
+    <div className="flex flex-col  items-center pt-9 text-black pb-40">
       <h1 className="text-center text-4xl font-extrabold p-5 text-red-600">
         {stay?.name}
       </h1>
@@ -47,10 +47,10 @@ const Page = (props: Props) => {
         {stay?.image ? (
           <Image
             src={stay.image}
-            width={500} // Adjust these dimensions as needed
-            height={300}
+            width={100} // Adjust these dimensions as needed
+            height={100}
             alt="Stay image"
-            className="rounded-lg pt-10"
+            className="rounded-lg pt-10 w-[450px] h-[350px]"
           />
         ) : (
           <p>No image available</p> // Fallback message if there's no image

@@ -78,14 +78,14 @@ const page = (props: Props) => {
   };
   return (
     <div className="pt-5">
-      <h1 className="text-center font-extrabold  text-red-700 text-3xl">
-        Your Flights
-      </h1>
       <ScrollArea className="h-[700px] w-[77em] rounded-md border m-5">
-        <div className="grid  grid-cols-3  gap-4 p-10  ">
+        <div className="grid  grid-cols-3  gap-4 p-10 ">
           {flights?.map((flight: any, index: any) => (
-            <div className="group  relative" key={flight._id}>
-              <div className="flex flex-col justify-center items-center border rounded-lg  group-hover:bg-slate-400">
+            <div
+              className="group  relative flex flex-col justify-center  border rounded-lg "
+              key={flight._id}
+            >
+              <div className="flex flex-col items-center w-full h-full  group-hover:bg-slate-400">
                 <Image
                   src={flight.image}
                   height={50}

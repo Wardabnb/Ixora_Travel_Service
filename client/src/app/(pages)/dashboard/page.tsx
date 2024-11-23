@@ -55,7 +55,7 @@ const Page = (props: Props) => {
       <div className="bg-[url('/bg1.png')] bg-cover bg-no-repeat h-[700px] bg-center text-white font-bold flex justify-center items-center">
         <h1 className="relative left-11 w-[600px] text-5xl leading-[90px] pb-7">
           Welcome{" "}
-          <span className="text-red-500 font-extrabold ">
+          <span className="text-[#41EAD4] font-extrabold ">
             {user.user.username}
           </span>
           <span className="whitespace-pre-line"> To IXORA Travel Service</span>
@@ -76,9 +76,9 @@ const Page = (props: Props) => {
                 height={100}
                 width={100}
                 alt="image"
-                className="w-full border-b   object-cover  bg-gray-300 h-[400px] "
+                className="w-full border-b rounded-lg  object-cover  bg-gray-300 h-[400px] "
               />
-              <h1 className="font-bold text-lg text-red-600 text-center p-5">
+              <h1 className="font-bold text-lg text-[#457B9D] text-center p-5">
                 {stay?.name}
               </h1>
               <p className="text-gray-400 ">{stay?.location}</p>
@@ -90,7 +90,7 @@ const Page = (props: Props) => {
             </div>
           ))}
         </div>
-        <Button className="w-[30em] border border-red-600 p-6 text-red-600 font-bold text-lg ">
+        <Button className="w-[30em] border border-[#333333] p-6 text-[#333333] font-bold text-lg ">
           <Link href={`/stays?userId=${userId}?page=1`}>Show More</Link>
         </Button>
       </div>
@@ -102,7 +102,7 @@ const Page = (props: Props) => {
         <div className="grid  grid-cols-3  gap-4 p-10  text-black">
           {flights?.map((flight: any, index: any) => (
             <div
-              className="flex flex-col  items-center border rounded-lg  group-hover:bg-slate-400 w-[500px] rounded-lg"
+              className="flex flex-col  items-center border rounded-lg  group-hover:bg-slate-400 w-[500px]"
               key={flight._id}
             >
               <Image
@@ -110,9 +110,9 @@ const Page = (props: Props) => {
                 height={100}
                 width={100}
                 alt="image"
-                className="w-full border-b   object-cover  bg-gray-300 "
+                className="w-full border-b rounded-lg  object-cover  bg-gray-300 h-[400px] "
               />
-              <h1 className="font-bold text-lg text-red-600 text-center p-5">
+              <h1 className="font-bold text-lg text-[#457B9D] text-center p-5">
                 {flight?.airplane}
               </h1>
               <div className="flex justify-between px-5 items-center w-full">
@@ -128,41 +128,9 @@ const Page = (props: Props) => {
             </div>
           ))}
         </div>
-        <Button className="w-[30em] border border-red-600 p-6 text-red-600 font-bold text-lg ">
-          <Link href={`/flights?userId=${userId}?page=1`}>Show More</Link>
+        <Button className="w-[30em] border border-[#333333] p-6 text-[#333333] font-bold text-lg ">
+          <Link href={`/stays?userId=${userId}?page=1`}>Show More</Link>
         </Button>
-      </div>
-      <div
-        className="bg-slate-950 flex justify-around items-center mt-5   h-[200px] "
-        id="contact"
-      >
-        <div className="text-white flex flex-col gap-5">
-          <span className="flex items-center gap-3">
-            <Facebook /> Ixora Travel Services
-          </span>
-          <span className="flex items-center gap-3">
-            <Instagram />
-            ixora_.travel
-          </span>
-          <span className="flex items-center gap-3">
-            <Mail />
-            ixoratravelservices@gmail.com
-          </span>
-        </div>
-        <div className="text-white flex flex-col gap-5">
-          <span className="flex items-center gap-3">
-            <Phone />
-            0559 40 54 02
-          </span>
-          <span className="flex items-center gap-3 ">
-            <MapPin />
-            <span className="w-[400px]">
-              {" "}
-              cité daksi abdelsalem 60 bâtiment 01n°03 Constantine/Algérie ,
-              Constantine, Algeria
-            </span>
-          </span>
-        </div>
       </div>
     </div>
   );

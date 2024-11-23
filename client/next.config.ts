@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
         port: "4000", // le port de ton backend, ajuste si nécessaire
         pathname: "/static/**", // le chemin de tes images
       },
+      {
+        hostname: "**",
+      },
     ],
   },
 };

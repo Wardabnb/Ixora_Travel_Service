@@ -22,7 +22,7 @@ const Navbar = (props: Props) => {
       .join(" > "); // Optionnel: utilise " > " pour séparer les parties du chemin
   };
   return (
-    <div className="flex justify-end  items-center p-5  h-[100px]  w-[1280px]  border-red-500 border-b gap-[500px]">
+    <div className="flex justify-end  items-center p-5  h-[100px]  w-[1280px]  border-[#E8E8E8] border-b gap-[500px]">
       <p className="font-extrabold text-2xl">
         {formatPathToTitle(path.replace("_", " "))}
       </p>

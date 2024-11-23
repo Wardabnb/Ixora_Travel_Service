@@ -73,7 +73,7 @@ export default function Page() {
 
   return (
     <div className="text-black">
-      <div className="flex justify-center items-start py-10 min-h-screen">
+      <div className="flex justify-center  py-10 pb-56">
         <div className="max-w-[1200px] w-full">
           <h1 className="text-6xl font-bold mb-10">Checkout</h1>
           <div className="flex gap-10 justify-between">
@@ -85,17 +85,18 @@ export default function Page() {
                     <div className="flex gap-5 items-center">
                       <Image
                         src={flight.image || "/placeholder.png"}
-                        height="80"
-                        width="80"
-                        alt={flight.name || "Flight"}
+                        height={100}
+                        width={100}
+                        alt={flight.name || "Stay"}
+                        className="w-[500px] h-[200px]"
                       />
-                      <div className="font-bold text-xl w-full">
+                      <div className="font-bold text-xl w-full text-red-700 flex flex-col gap-7">
                         {flight.airplane}
+                        <div className="text-black">
+                          <span className="font-bold">Price: </span>
+                          {flight.price}
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <span className="font-bold">Price: </span>
-                      {flight.price}DA
                     </div>
                   </div>
                 ))

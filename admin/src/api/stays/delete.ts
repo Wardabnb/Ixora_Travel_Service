@@ -6,7 +6,9 @@ export function useDeleteStays() {
     mutationFn: async (newStay: { StayId: string }) => {
       // Pass StayId as a URL parameter
       await axios.delete(`http://localhost:4000/stays/delete`, {
-        data: { StayId: newStay.StayId },
+        data: {
+          StayId: newStay.StayId,
+        },
       });
     },
     onSuccess: () => {
