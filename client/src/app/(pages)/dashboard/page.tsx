@@ -1,6 +1,6 @@
 "use client";
 import { useGetUser } from "@/api/user/get";
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useGetRelatedStay } from "@/api/stays/related";
 import Image from "next/image";
@@ -21,13 +21,14 @@ type Props = {};
 
 const Page = (props: Props) => {
   const { data: user, isLoading, isError, error } = useGetUser();
+  console.log("user dash", user);
+
   const { data: stays } = useGetRelatedStay();
   const { data: flights } = useGetRelatedFlights();
   console.log("stays Related", stays);
 
   const searchParams = useSearchParams(); // Récupérer les paramètres de l'URL
   const userId = searchParams.get("userId"); // Extraire le userId des paramètres de recherche
-  console.log("user get", user);
 
   useEffect(() => {
     if (userId) {

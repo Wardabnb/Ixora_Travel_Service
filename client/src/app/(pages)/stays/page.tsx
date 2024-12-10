@@ -20,6 +20,8 @@ type Props = {};
 const page = (props: Props) => {
   const searchParams = useSearchParams();
   const currentPage = searchParams.get("page") || "1";
+  const user = JSON.parse(localStorage.getItem("user") || "[]");
+
   const { data: stays } = useGetStays(currentPage);
   console.log("stays data", stays);
 
@@ -64,19 +66,25 @@ const page = (props: Props) => {
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious
-              href={`/stays?page=${Math.max(1, Number(currentPage) - 1)}`}
+              href={`/stays?userId=${user._id}?page=${Math.max(
+                1,
+                Number(currentPage) - 1
+              )}`}
             />
           </PaginationItem>
           <PaginationItem>
             {Array.from({ length: numPages }, (_, i) => (
-              <PaginationLink href={`/stays?page=${i + 1}`} key={i}>
+              <PaginationLink
+                href={`/stays?userId=${user._id}?page=${i + 1}`}
+                key={i}
+              >
                 {i + 1}
               </PaginationLink>
             ))}
           </PaginationItem>
           <PaginationItem>
             <PaginationNext
-              href={`/stays?page=${Math.min(
+              href={`/stays?userId=${user._id}?page=${Math.min(
                 numPages,
                 Number(currentPage) + 1
               )}`}

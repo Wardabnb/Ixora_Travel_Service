@@ -31,6 +31,7 @@ export default function Login() {
           <Button
             className="flex items-center h-14 bg-red-500 text-white font-bold"
             variant="destructive"
+           
           >
             <Image src="/google.png" alt="" width={30} height={30} />
             SignUp with google
