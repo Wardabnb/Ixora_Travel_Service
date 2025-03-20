@@ -5,7 +5,7 @@ export function useDeleteFlights() {
   return useMutation({
     mutationFn: async (newFlight: { FlightId: string }) => {
       // Pass StayId as a URL parameter
-      await axios.delete(`http://localhost:4000/flights/delete`, {
+      await axios.delete(`http://localhost:1000/flights/delete`, {
         data: { FlightId: newFlight.FlightId },
       });
     },

@@ -12,7 +12,7 @@ export function useAddFlightsMutation() {
       departure: string;
       arrive: string;
     }) => {
-      axios.postForm("http://localhost:4000/flights/add", newFlight, {
+      axios.postForm("http://localhost:1000/flights/add", newFlight, {
         headers: { "Content-Type": "application/json" },
       });
     },

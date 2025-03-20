@@ -11,7 +11,7 @@ export function useAddStaysMutation() {
       location: string;
       description: string;
     }) => {
-      axios.postForm("http://localhost:4000/stays/Add", newStay, {
+      axios.postForm("http://localhost:1000/stays/Add", newStay, {
         headers: { "Content-Type": "application/json" },
       });
     },

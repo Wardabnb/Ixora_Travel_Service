@@ -6,8 +6,8 @@ export function useGetAdmin() {
     queryKey: ["admins"],
     queryFn: async () =>
       (
-        await axios.post("http://localhost:4000/admin/all", {
-          password: "123456",
+        await axios.post("http://localhost:1000/admin/all", {
+          password: "1234",
           email: "admin@gmail.com",
         })
       ).data,

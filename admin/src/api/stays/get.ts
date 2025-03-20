@@ -6,6 +6,6 @@ export function useGetStays(numPage: string) {
     queryKey: ["stays"],
     enabled: !!numPage,
     queryFn: async () =>
-      (await axios.get("http://localhost:4000/stays?page=" + numPage)).data,
+      (await axios.get("http://localhost:1000/stays?page=" + numPage)).data,
   });
 }

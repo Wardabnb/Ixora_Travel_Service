@@ -13,7 +13,7 @@ export function useEditFlights() {
       departure: string;
       arrive: string;
     }) => {
-      axios.putForm("http://localhost:4000/flights/Edit", newFlight, {
+      axios.putForm("http://localhost:1000/flights/Edit", newFlight, {
         headers: { "Content-Type": "application/json" },
       });
     },

@@ -7,6 +7,6 @@ export function useGetReservationStays() {
     queryKey: ["Reservation_stays"],
 
     queryFn: async () =>
-      (await axios.get("http://localhost:4000/reservationStay/")).data,
+      (await axios.get("http://localhost:1000/reservationStay/")).data,
   });
 }

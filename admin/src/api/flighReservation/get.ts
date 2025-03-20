@@ -7,6 +7,6 @@ export function useGetReservationFlight() {
     queryKey: ["Reservation_flights"],
 
     queryFn: async () =>
-      (await axios.get("http://localhost:4000/reservationFlight/")).data,
+      (await axios.get("http://localhost:1000/reservationFlight/")).data,
   });
 }

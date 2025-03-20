@@ -12,7 +12,7 @@ export function useEditStays() {
       location: string;
       description: string;
     }) => {
-      axios.putForm("http://localhost:4000/stays/Edit", newStay, {
+      axios.putForm("http://localhost:1000/stays/Edit", newStay, {
         headers: { "Content-Type": "application/json" },
       });
     },

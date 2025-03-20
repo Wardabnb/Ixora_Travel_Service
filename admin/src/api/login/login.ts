@@ -12,7 +12,7 @@ export function useSignIn() {
     mutationFn: async ({ email, password }: SignIn) => {
       try {
         console.log("Payload:", { email, password });
-        const response = await axios.post("http://localhost:4000/admin/login", {
+        const response = await axios.post("http://localhost:1000/admin/login", {
           password,
           email,
         });

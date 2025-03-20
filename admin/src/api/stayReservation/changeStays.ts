@@ -14,7 +14,7 @@ export function useChangeStaysStatus() {
     },
     mutationFn: async ({ ReservationId, value }: ParamsReservervation) =>
       (
-        await axios.post("http://localhost:4000/reservationStay/status", {
+        await axios.post("http://localhost:1000/reservationStay/status", {
           ReservationId,
           value,
           password: "123456",

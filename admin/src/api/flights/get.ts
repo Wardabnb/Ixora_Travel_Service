@@ -6,6 +6,6 @@ export function useGetFlights(numPage: string) {
     queryKey: ["flights"],
     enabled: !!numPage,
     queryFn: async () =>
-      (await axios.get("http://localhost:4000/flights?page=" + numPage)).data,
+      (await axios.get("http://localhost:1000/flights?page=" + numPage)).data,
   });
 }

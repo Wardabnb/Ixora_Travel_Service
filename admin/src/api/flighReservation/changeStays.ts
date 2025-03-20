@@ -14,7 +14,7 @@ export function useChangeFlightStatus() {
     },
     mutationFn: async ({ ReservationId, value }: ParamsReservervation) =>
       (
-        await axios.post("http://localhost:4000/reservationFlight/status", {
+        await axios.post("http://localhost:1000/reservationFlight/status", {
           ReservationId,
           value,
         })
